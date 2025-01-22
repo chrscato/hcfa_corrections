@@ -73,16 +73,17 @@ if files:
         cols = st.columns(3)
         data["patient_name"] = cols[0].text_input("Patient Name", value=data.get("patient_name", ""))
 
-        cleaned_dos1 = cols[1].date_input(
+        # Use st.date_input for DOS fields with existing values or leave blank if not available
+        cleaned_dos1 = st.date_input(
             "Date of Service 1",
-            value=datetime.strptime(data.get("cleaned_dos1", "2025-01-01"), "%Y-%m-%d") if data.get("cleaned_dos1") else datetime(2025, 1, 1),
+            value=datetime.strptime(data["cleaned_dos1"], "%Y-%m-%d") if data.get("cleaned_dos1") else None,
             key="cleaned_dos1"
         )
         data["cleaned_dos1"] = cleaned_dos1.strftime("%Y-%m-%d") if cleaned_dos1 else ""
-
-        cleaned_dos2 = cols[2].date_input(
+        
+        cleaned_dos2 = st.date_input(
             "Date of Service 2",
-            value=datetime.strptime(data.get("cleaned_dos2", "2025-01-01"), "%Y-%m-%d") if data.get("cleaned_dos2") else datetime(2025, 1, 1),
+            value=datetime.strptime(data["cleaned_dos2"], "%Y-%m-%d") if data.get("cleaned_dos2") else None,
             key="cleaned_dos2"
         )
         data["cleaned_dos2"] = cleaned_dos2.strftime("%Y-%m-%d") if cleaned_dos2 else ""
