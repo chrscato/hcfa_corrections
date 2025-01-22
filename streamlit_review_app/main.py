@@ -98,8 +98,12 @@ if files:
         for idx, item in enumerate(data.get("line_items", [])):
             st.write(f"#### Line Item {idx + 1}")
             item["date_of_service"] = st.text_input(f"DOS (Item {idx + 1})", value=item.get("date_of_service", ""))
+            item["plos"] = st.text_input(f"PLOS (Item {idx + 1})", value=item.get("plos", ""))
             item["cpt"] = st.text_input(f"CPT Code (Item {idx + 1})", value=item.get("cpt", ""))
+            item["modifier"] = st.text_input(f"modifier (Item {idx + 1})", value=item.get("modifier", ""))
             item["cleaned_charge"] = st.text_input(f"Charge (Item {idx + 1})", value=item.get("cleaned_charge", ""))
+            item["units"] = st.text_input(f"units (Item {idx + 1})", value=item.get("units", ""))
+            
 
         # Show cropped footer image
         footer_image = get_pdf_region(pdf_path, "footer")
@@ -110,6 +114,7 @@ if files:
         st.write("### Footer Information")
         data["cleaned_total_charge"] = st.text_input("Total Charge", value=data.get("cleaned_total_charge", ""))
         data["patient_acct_no"] = st.text_input("Patient Account No", value=data.get("patient_acct_no", ""))
+        data["tin"] = st.text_input("TIN", value=data.get("tin", ""))
 
         # Open full PDF button
         if st.button("Open Full PDF"):
