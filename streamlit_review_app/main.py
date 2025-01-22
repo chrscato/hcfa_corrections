@@ -4,9 +4,9 @@ from app.utils import list_files, load_file, save_file
 
 # Configurations
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FAILS_FOLDER = os.path.join(BASE_DIR, "..", "data", "fails")
-OUTPUT_FOLDER = os.path.join(BASE_DIR, "..", "data", "output")
-ORIGINALS_FOLDER = os.path.join(BASE_DIR, "..", "data", "originals")
+FAILS_FOLDER = r"streamlit_review_app/data/fails"
+OUTPUT_FOLDER = r"streamlit_review_app/data/output"
+ORIGINALS_FOLDER = r"streamlit_review_app/data/originals"
 
 # Initialize session state
 if "current_file_index" not in st.session_state:
