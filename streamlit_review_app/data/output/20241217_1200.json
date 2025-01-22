@@ -1,0 +1,67 @@
+{
+  "cleaned_dos1": "2024-10-17",
+  "cleaned_dos2": "2024-10-17",
+  "cleaned_total_charge": "805.00",
+  "dos1": "10 17 24",
+  "dos2": "10 17 24",
+  "line_items": [
+    {
+      "charges": "328.00",
+      "cleaned_charge": "328.00",
+      "cpt": "23350",
+      "modifier": "LT",
+      "plos": "11",
+      "units": "1",
+      "date_of_service": ""
+    },
+    {
+      "charges": "321\n00",
+      "cleaned_charge": "321.00",
+      "cpt": "73040",
+      "modifier": "",
+      "plos": "11",
+      "units": "1",
+      "date_of_service": ""
+    },
+    {
+      "charges": "148 00",
+      "cleaned_charge": "148.00",
+      "cpt": "77002",
+      "modifier": "",
+      "plos": "11",
+      "units": "1",
+      "date_of_service": ""
+    },
+    {
+      "charges": "100",
+      "cleaned_charge": "1.00",
+      "cpt": "A9585",
+      "modifier": "",
+      "plos": "11",
+      "units": "1",
+      "date_of_service": ""
+    },
+    {
+      "cpt": "Q9967",
+      "charges": "7",
+      "cleaned_charge": "7",
+      "units": "7",
+      "modifier": "",
+      "plos": "11",
+      "date_of_service": ""
+    }
+  ],
+  "patient_acct_no": "100129849-1",
+  "patient_dob": "061201976M",
+  "patient_name": "DEMPSEY, ANDREW",
+  "tin": "861108735",
+  "total_charge": "805 00",
+  "validation_results": {
+    "any_valid_date": true,
+    "dos1_valid": true,
+    "dos2_valid": true,
+    "patient_name_valid": true,
+    "problems": [],
+    "total_charge_valid": false
+  }
+}
