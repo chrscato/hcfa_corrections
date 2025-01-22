@@ -1,8 +1,10 @@
 import os
 import streamlit as st
+import zipfile
+import io
+from datetime import datetime
 from app.utils import list_files, load_file, save_file
 from app.pdf_utils import get_pdf_region
-from datetime import datetime
 
 # Base directory setup
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -19,6 +21,18 @@ if "current_file_index" not in st.session_state:
     st.session_state.current_file_index = 0  # Start with the first file
 if "current_data" not in st.session_state:
     st.session_state.current_data = None  # Store the data of the current file
+
+# Function to create a zip file of processed files and clear the folder
+def zip_and_clear_folder(folder_path):
+    zip_buffer = io.BytesIO()
+    with zipfile.ZipFile(zip_buffer, "w") as zf:
+        for root, _, files in os.walk(folder_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                zf.write(file_path, os.path.relpath(file_path, folder_path))
+                os.remove(file_path)  # Clear files after adding to zip
+    zip_buffer.seek(0)
+    return zip_buffer
 
 # Fetch list of JSON files
 files = list_files(FAILS_FOLDER)
@@ -157,3 +171,22 @@ if files:
             st.session_state.current_file_index = 0
 else:
     st.write("No files to review.")
+
+# Divider for download section
+st.divider()
+st.header("Download Processed Files")
+
+# Button to download and clear processed files
+if st.button("Download and Clear Processed Files"):
+    processed_files = list_files(OUTPUT_FOLDER)
+    if processed_files:
+        zip_buffer = zip_and_clear_folder(OUTPUT_FOLDER)
+        st.download_button(
+            label="Download Processed JSONs",
+            data=zip_buffer,
+            file_name="processed_files.zip",
+            mime="application/zip"
+        )
+        st.success("Processed files downloaded and cleared.")
+    else:
+        st.warning("No processed files to download.")
