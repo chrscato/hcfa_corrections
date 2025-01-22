@@ -71,8 +71,24 @@ if files:
         # Header fields
         st.write("### Header Information")
         data["patient_name"] = st.text_input("Patient Name", value=data.get("patient_name", ""))
-        data["cleaned_dos1"] = st.text_input("Date of Service 1", value=data.get("cleaned_dos1", ""))
-        data["cleaned_dos2"] = st.text_input("Date of Service 2", value=data.get("cleaned_dos2", ""))
+        
+        # Default value for the calendar
+        default_date = datetime(2025, 1, 1)
+        
+        # Use st.date_input for DOS fields with default values
+        cleaned_dos1 = st.date_input(
+            "Date of Service 1",
+            value=datetime.strptime(data.get("cleaned_dos1", default_date.strftime("%Y-%m-%d")), "%Y-%m-%d"),
+            key="cleaned_dos1"
+        )
+        data["cleaned_dos1"] = cleaned_dos1.strftime("%Y-%m-%d")
+        
+        cleaned_dos2 = st.date_input(
+            "Date of Service 2",
+            value=datetime.strptime(data.get("cleaned_dos2", default_date.strftime("%Y-%m-%d")), "%Y-%m-%d"),
+            key="cleaned_dos2"
+        )
+        data["cleaned_dos2"] = cleaned_dos2.strftime("%Y-%m-%d")
 
         # Show cropped line items image
         line_items_image = get_pdf_region(pdf_path, "line_items")
