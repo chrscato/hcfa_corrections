@@ -76,14 +76,14 @@ if files:
 
         cleaned_dos1 = cols[1].date_input(
             "Date of Service 1",
-            value=datetime.strptime(data.get("cleaned_dos1", "2025-01-01"), "%Y-%m-%d") if data.get("cleaned_dos1") else None,
+            value=datetime.strptime(data.get("cleaned_dos1", "2025-01-01"), "%Y-%m-%d") if data.get("cleaned_dos1") else datetime(2025, 1, 1),
             key="cleaned_dos1"
         )
         data["cleaned_dos1"] = cleaned_dos1.strftime("%Y-%m-%d") if cleaned_dos1 else ""
 
         cleaned_dos2 = cols[2].date_input(
             "Date of Service 2",
-            value=datetime.strptime(data.get("cleaned_dos2", "2025-01-01"), "%Y-%m-%d") if data.get("cleaned_dos2") else None,
+            value=datetime.strptime(data.get("cleaned_dos2", "2025-01-01"), "%Y-%m-%d") if data.get("cleaned_dos2") else datetime(2025, 1, 1),
             key="cleaned_dos2"
         )
         data["cleaned_dos2"] = cleaned_dos2.strftime("%Y-%m-%d") if cleaned_dos2 else ""
@@ -95,6 +95,21 @@ if files:
 
         # Line items fields
         st.write("### Line Items")
+
+        # Add and Remove Line Items Buttons
+        if "line_items" not in data:
+            data["line_items"] = []
+
+        if st.button("Add Line Item"):
+            data["line_items"].append({
+                "date_of_service": "",
+                "plos": "",
+                "cpt": "",
+                "modifier": "",
+                "cleaned_charge": "",
+                "units": ""
+            })
+
         for idx, item in enumerate(data.get("line_items", [])):
             st.write(f"#### Line Item {idx + 1}")
             cols = st.columns(6)
@@ -104,6 +119,10 @@ if files:
             item["modifier"] = cols[3].text_input(f"Modifier (Item {idx + 1})", value=item.get("modifier", ""))
             item["cleaned_charge"] = cols[4].text_input(f"Charge (Item {idx + 1})", value=item.get("cleaned_charge", ""))
             item["units"] = cols[5].text_input(f"Units (Item {idx + 1})", value=item.get("units", ""))
+
+            if st.button(f"Remove Line Item {idx + 1}"):
+                data["line_items"].pop(idx)
+                st.experimental_rerun()
 
         # Show cropped footer image
         footer_image = get_pdf_region(pdf_path, "footer")
