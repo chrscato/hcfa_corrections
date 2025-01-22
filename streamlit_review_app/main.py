@@ -4,10 +4,10 @@ from app.pdf_utils import get_pdf_region
 import os
 
 # Configurations
-FAILS_FOLDER = "data/fails"
-OUTPUT_FOLDER = "data/output"
-PDF_FOLDER = "data/pdfs"
-ORIGINALS_FOLDER = "data/originals"
+FAILS_FOLDER = "streamlit_review_app/data/fails"
+OUTPUT_FOLDER = "streamlit_review_app/data/output"
+PDF_FOLDER = "streamlit_review_app/datapdfs"
+ORIGINALS_FOLDER = "streamlit_review_app/dataoriginals"
 
 # Streamlit App
 st.title("JSON Review Interface")
