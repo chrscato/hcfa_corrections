@@ -1,0 +1,36 @@
+{
+    "patient_name": "HARDY\nDORIS",
+    "patient_dob": "MM200 1966",
+    "dos1": "Invalid DOS",
+    "dos2": "01 25 25",
+    "tin": "810607616",
+    "patient_acct_no": "001/544489",
+    "total_charge": "1600 0.0",
+    "line_items": [
+        {
+            "cpt": "72146",
+            "charges": "1600\n00",
+            "units": "1",
+            "modifier": "",
+            "plos": "",
+            "cleaned_charge": "1600.00"
+        }
+    ],
+    "cleaned_dos1": null,
+    "cleaned_dos2": "2025-01-25",
+    "cleaned_total_charge": "16000.0",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": false,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": [
+            {
+                "reason": "Invalid DOS1 format",
+                "original_date": "Invalid DOS",
+                "file_name": "20250114_1086_optimized.json"
+            }
+        ]
+    }
+}

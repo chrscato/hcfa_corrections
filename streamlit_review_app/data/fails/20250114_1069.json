@@ -1,0 +1,36 @@
+{
+    "patient_name": "ELLENBURG, PHILIP B",
+    "patient_dob": "0314 1967 \u043c.\u0425",
+    "dos1": "09 16 2024",
+    "dos2": "Invalid Date of Service",
+    "tin": "561876341",
+    "patient_acct_no": "E0712995993230",
+    "total_charge": "",
+    "line_items": [
+        {
+            "cpt": "73221",
+            "charges": "1956 00",
+            "units": "1",
+            "modifier": "LT",
+            "plos": "49",
+            "cleaned_charge": "1956.00"
+        }
+    ],
+    "cleaned_dos1": "2024-09-16",
+    "cleaned_dos2": null,
+    "cleaned_total_charge": "",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": true,
+        "dos2_valid": false,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": [
+            {
+                "reason": "Invalid DOS2 format",
+                "original_date": "Invalid Date of Service",
+                "file_name": "20250114_1069_optimized.json"
+            }
+        ]
+    }
+}

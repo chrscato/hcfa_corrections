@@ -1,0 +1,30 @@
+{
+    "patient_name": "WARNER, KEVIN",
+    "patient_dob": "01 22 61",
+    "dos1": "12\n28\n24\n28\n12\n24",
+    "dos2": "12 28 24",
+    "tin": "010570490",
+    "patient_acct_no": "PMR1160943",
+    "total_charge": "",
+    "line_items": [
+        {
+            "cpt": "72141",
+            "charges": "1888 45",
+            "units": "1.00",
+            "modifier": "",
+            "plos": "11",
+            "cleaned_charge": "1888.45"
+        }
+    ],
+    "cleaned_dos1": "2024-12-28",
+    "cleaned_dos2": "2024-12-28",
+    "cleaned_total_charge": "",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": true,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": []
+    }
+}

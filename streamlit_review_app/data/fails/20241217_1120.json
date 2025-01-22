@@ -1,0 +1,93 @@
+{
+    "patient_name": "PIERRE EDKYE",
+    "patient_dob": "12 87 1997",
+    "dos1": "10152024",
+    "dos2": "Invalid Date of Service",
+    "tin": "411410766",
+    "patient_acct_no": "003600",
+    "total_charge": "1,409 00",
+    "line_items": [
+        {
+            "cpt": "27350",
+            "charges": "600001",
+            "units": "1",
+            "modifier": "ME",
+            "plos": "",
+            "cleaned_charge": "600.00"
+        },
+        {
+            "cpt": "1.77002",
+            "charges": "423 00",
+            "units": "1",
+            "modifier": "\u0645\u062f\u0627",
+            "plos": "",
+            "cleaned_charge": "423.00"
+        },
+        {
+            "cpt": "10 GEH",
+            "charges": "75 00",
+            "units": "15",
+            "modifier": "",
+            "plos": "",
+            "cleaned_charge": "7500"
+        },
+        {
+            "cpt": "Q8",
+            "charges": "175.00",
+            "units": "35",
+            "modifier": "",
+            "plos": "",
+            "cleaned_charge": "175.00"
+        },
+        {
+            "cpt": "10 GER",
+            "charges": "136 00",
+            "units": "1",
+            "modifier": "",
+            "plos": "",
+            "cleaned_charge": "136.00"
+        },
+        {
+            "cpt": "Q9",
+            "charges": "",
+            "units": "",
+            "modifier": "",
+            "plos": "",
+            "cleaned_charge": ""
+        },
+        {
+            "cpt": "A4",
+            "charges": "",
+            "units": "",
+            "modifier": "",
+            "plos": "",
+            "cleaned_charge": ""
+        }
+    ],
+    "cleaned_dos1": null,
+    "cleaned_dos2": null,
+    "cleaned_total_charge": "1409.00",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": false,
+        "dos2_valid": false,
+        "any_valid_date": false,
+        "patient_name_valid": true,
+        "problems": [
+            {
+                "reason": "Invalid DOS1 format",
+                "original_date": "10152024",
+                "file_name": "20241217_1120_optimized.json"
+            },
+            {
+                "reason": "Invalid DOS2 format",
+                "original_date": "Invalid Date of Service",
+                "file_name": "20241217_1120_optimized.json"
+            },
+            {
+                "reason": "No valid dates found in either DOS1 or DOS2",
+                "file_name": "20241217_1120_optimized.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "patient_name": "NEWSOME DANIEL",
+    "patient_dob": "01 17 1964",
+    "dos1": "12 12 24\n12 12 24",
+    "dos2": "Invalid Date of Service",
+    "tin": "462204719",
+    "patient_acct_no": "17082171",
+    "total_charge": "",
+    "line_items": [
+        {
+            "cpt": "99203",
+            "charges": "195 00",
+            "units": "1",
+            "modifier": "25",
+            "plos": "11",
+            "cleaned_charge": "195.00"
+        },
+        {
+            "cpt": "95913",
+            "charges": "1950 00",
+            "units": "1",
+            "modifier": "RT",
+            "plos": "11",
+            "cleaned_charge": "1950.00"
+        },
+        {
+            "cpt": "95886",
+            "charges": "250 00",
+            "units": "1",
+            "modifier": "LT",
+            "plos": "11",
+            "cleaned_charge": "250.00"
+        },
+        {
+            "cpt": "95886",
+            "charges": "250 00",
+            "units": "1",
+            "modifier": "",
+            "plos": "11",
+            "cleaned_charge": "250.00"
+        }
+    ],
+    "cleaned_dos1": "2024-12-12",
+    "cleaned_dos2": null,
+    "cleaned_total_charge": "",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": true,
+        "dos2_valid": false,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": [
+            {
+                "reason": "Invalid DOS2 format",
+                "original_date": "Invalid Date of Service",
+                "file_name": "20250103_1005_optimized.json"
+            }
+        ]
+    }
+}

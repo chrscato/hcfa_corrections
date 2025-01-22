@@ -1,0 +1,30 @@
+{
+    "patient_name": "GALLON, RHONDA",
+    "patient_dob": "0202 61",
+    "dos1": "12 16 24",
+    "dos2": "10 21 24",
+    "tin": "811981130",
+    "patient_acct_no": "G06047RISL1ZV0055",
+    "total_charge": "195000",
+    "line_items": [
+        {
+            "cpt": "73221",
+            "charges": "",
+            "units": "1.00",
+            "modifier": "LT",
+            "plos": "",
+            "cleaned_charge": ""
+        }
+    ],
+    "cleaned_dos1": "2024-12-16",
+    "cleaned_dos2": "2024-10-21",
+    "cleaned_total_charge": "1950.00",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": true,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": []
+    }
+}

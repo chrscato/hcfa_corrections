@@ -1,0 +1,62 @@
+{
+    "patient_name": "SCHENARTS, NICHOLAS",
+    "patient_dob": "10\n29 1993",
+    "dos1": "11 26 24",
+    "dos2": "11 26 24",
+    "tin": "824890700",
+    "patient_acct_no": "2423934X1",
+    "total_charge": "253155",
+    "line_items": [
+        {
+            "cpt": "27093",
+            "charges": "69000-",
+            "units": "1",
+            "modifier": "LT",
+            "plos": "11",
+            "cleaned_charge": "690.00"
+        },
+        {
+            "cpt": "77002",
+            "charges": "39000",
+            "units": "1",
+            "modifier": "",
+            "plos": "11",
+            "cleaned_charge": "390.00"
+        },
+        {
+            "cpt": "09967",
+            "charges": "055",
+            "units": "5",
+            "modifier": "",
+            "plos": "11",
+            "cleaned_charge": "055"
+        },
+        {
+            "cpt": "J2795",
+            "charges": "100",
+            "units": "25",
+            "modifier": "",
+            "plos": "11",
+            "cleaned_charge": "100"
+        },
+        {
+            "cpt": "73722",
+            "charges": "145000",
+            "units": "1",
+            "modifier": "",
+            "plos": "11",
+            "cleaned_charge": "1450.00"
+        }
+    ],
+    "cleaned_dos1": "2024-11-26",
+    "cleaned_dos2": "2024-11-26",
+    "cleaned_total_charge": "2531.55",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": true,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": []
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "patient_name": "AVEYTIA, PORFIRIO",
+    "patient_dob": "1106152 MX",
+    "dos1": "1206 24",
+    "dos2": "12 12 24",
+    "tin": "943292479",
+    "patient_acct_no": "",
+    "total_charge": "",
+    "line_items": [
+        {
+            "cpt": "72131",
+            "charges": "92100",
+            "units": "1.00",
+            "modifier": "",
+            "plos": "11",
+            "cleaned_charge": "921.00"
+        }
+    ],
+    "cleaned_dos1": null,
+    "cleaned_dos2": "2024-12-12",
+    "cleaned_total_charge": "",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": false,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": [
+            {
+                "reason": "Invalid DOS1 format",
+                "original_date": "1206 24",
+                "file_name": "20250114_1050_optimized.json"
+            }
+        ]
+    }
+}

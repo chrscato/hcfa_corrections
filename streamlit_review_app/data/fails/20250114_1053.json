@@ -1,0 +1,27 @@
+{
+    "patient_name": "AVEYTIA, PORFIRIO",
+    "patient_dob": "11 06 52",
+    "dos1": "Invalid DOS",
+    "dos2": "12 06 24",
+    "tin": "943292479",
+    "patient_acct_no": "HDC79108509",
+    "total_charge": "",
+    "line_items": [],
+    "cleaned_dos1": null,
+    "cleaned_dos2": "2024-12-06",
+    "cleaned_total_charge": "",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": false,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": [
+            {
+                "reason": "Invalid DOS1 format",
+                "original_date": "Invalid DOS",
+                "file_name": "20250114_1053_optimized.json"
+            }
+        ]
+    }
+}

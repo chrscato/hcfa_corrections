@@ -1,0 +1,30 @@
+{
+    "patient_name": "ROSARIO, RICHARD",
+    "patient_dob": "110890",
+    "dos1": "1127\n24\n1127\n24\n11",
+    "dos2": "11 27 24",
+    "tin": "453727094",
+    "patient_acct_no": "SMF94648412",
+    "total_charge": "119300",
+    "line_items": [
+        {
+            "cpt": "73721",
+            "charges": "",
+            "units": "1.00",
+            "modifier": "RT",
+            "plos": "11",
+            "cleaned_charge": ""
+        }
+    ],
+    "cleaned_dos1": "2024-11-24",
+    "cleaned_dos2": "2024-11-27",
+    "cleaned_total_charge": "1193.00",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": true,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": []
+    }
+}

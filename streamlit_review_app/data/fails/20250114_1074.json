@@ -1,0 +1,30 @@
+{
+    "patient_name": "RUFF, DENNIS",
+    "patient_dob": "02 20 1979",
+    "dos1": "10\n13\n24",
+    "dos2": "10 13 24",
+    "tin": "562016235",
+    "patient_acct_no": "E0719990394270",
+    "total_charge": "2497 00",
+    "line_items": [
+        {
+            "cpt": "72148",
+            "charges": "",
+            "units": "1",
+            "modifier": "",
+            "plos": "13",
+            "cleaned_charge": ""
+        }
+    ],
+    "cleaned_dos1": "2024-10-13",
+    "cleaned_dos2": "2024-10-13",
+    "cleaned_total_charge": "2497.00",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": true,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": []
+    }
+}

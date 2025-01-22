@@ -1,0 +1,46 @@
+{
+    "patient_name": "RHYMES, SHEILA",
+    "patient_dob": "03 13 1972",
+    "dos1": "12\n2024 09\n12\n2024 11",
+    "dos2": "08 11 2024",
+    "tin": "810980506",
+    "patient_acct_no": "727924",
+    "total_charge": "4130",
+    "line_items": [
+        {
+            "cpt": "74178",
+            "charges": "1990",
+            "units": "1",
+            "modifier": "",
+            "plos": "12",
+            "cleaned_charge": "1990"
+        },
+        {
+            "cpt": "71270",
+            "charges": "1990",
+            "units": "1",
+            "modifier": "",
+            "plos": "12",
+            "cleaned_charge": "1990"
+        },
+        {
+            "cpt": "Q9967",
+            "charges": "1:50",
+            "units": "100",
+            "modifier": "",
+            "plos": "12",
+            "cleaned_charge": "1.50"
+        }
+    ],
+    "cleaned_dos1": "2024-12-09",
+    "cleaned_dos2": "2024-08-11",
+    "cleaned_total_charge": "4130",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": true,
+        "dos2_valid": true,
+        "any_valid_date": true,
+        "patient_name_valid": true,
+        "problems": []
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "patient_name": "STEVENSON BRUCE",
+    "patient_dob": "12111992",
+    "dos1": "Invalid DOS",
+    "dos2": "Invalid Date of Service",
+    "tin": "",
+    "patient_acct_no": "",
+    "total_charge": "",
+    "line_items": [],
+    "cleaned_dos1": null,
+    "cleaned_dos2": null,
+    "cleaned_total_charge": "",
+    "validation_results": {
+        "total_charge_valid": false,
+        "dos1_valid": false,
+        "dos2_valid": false,
+        "any_valid_date": false,
+        "patient_name_valid": true,
+        "problems": [
+            {
+                "reason": "Invalid DOS1 format",
+                "original_date": "Invalid DOS",
+                "file_name": "20250103_1040_optimized.json"
+            },
+            {
+                "reason": "Invalid DOS2 format",
+                "original_date": "Invalid Date of Service",
+                "file_name": "20250103_1040_optimized.json"
+            },
+            {
+                "reason": "No valid dates found in either DOS1 or DOS2",
+                "file_name": "20250103_1040_optimized.json"
+            }
+        ]
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "patient_name": "GONZALEZ GUILLERMO",
+    "patient_dob": "i\n86 1987",
+    "dos1": "12282024",
+    "dos2": "Invalid Date of Service",
+    "tin": "650378614",
+    "patient_acct_no": "005901177978",
+    "total_charge": "156, 00",
+    "line_items": [
+        {
+            "cpt": "72120",
+            "charges": "156",
+            "units": "001",
+            "modifier": "",
+            "plos": "11",
+            "cleaned_charge": "156"
+        }
+    ],
+    "cleaned_dos1": null,
+    "cleaned_dos2": null,
+    "cleaned_total_charge": "156.00",
+    "validation_results": {
+        "total_charge_valid": true,
+        "dos1_valid": false,
+        "dos2_valid": false,
+        "any_valid_date": false,
+        "patient_name_valid": true,
+        "problems": [
+            {
+                "reason": "Invalid DOS1 format",
+                "original_date": "12282024",
+                "file_name": "20250115_1016_optimized.json"
+            },
+            {
+                "reason": "Invalid DOS2 format",
+                "original_date": "Invalid Date of Service",
+                "file_name": "20250115_1016_optimized.json"
+            },
+            {
+                "reason": "No valid dates found in either DOS1 or DOS2",
+                "file_name": "20250115_1016_optimized.json"
+            }
+        ]
+    }
+}
