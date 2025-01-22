@@ -67,21 +67,21 @@ if files:
         # Show cropped header image
         header_image = get_pdf_region(pdf_path, "header")
         if header_image:
-            st.image(header_image, caption="Header Region", use_column_width=True)
+            st.image(header_image, caption="Header Region", use_container_width=True)
 
         # Header fields
         st.write("### Header Information")
-        data["patient_name"] = st.text_input("Patient Name", value=data.get("patient_name", ""))
+        cols = st.columns(3)
+        data["patient_name"] = cols[0].text_input("Patient Name", value=data.get("patient_name", ""))
 
-        # Use st.date_input for DOS fields with existing values or empty if not available
-        cleaned_dos1 = st.date_input(
+        cleaned_dos1 = cols[1].date_input(
             "Date of Service 1",
             value=datetime.strptime(data.get("cleaned_dos1", "2025-01-01"), "%Y-%m-%d") if data.get("cleaned_dos1") else None,
             key="cleaned_dos1"
         )
         data["cleaned_dos1"] = cleaned_dos1.strftime("%Y-%m-%d") if cleaned_dos1 else ""
 
-        cleaned_dos2 = st.date_input(
+        cleaned_dos2 = cols[2].date_input(
             "Date of Service 2",
             value=datetime.strptime(data.get("cleaned_dos2", "2025-01-01"), "%Y-%m-%d") if data.get("cleaned_dos2") else None,
             key="cleaned_dos2"
@@ -91,30 +91,31 @@ if files:
         # Show cropped line items image
         line_items_image = get_pdf_region(pdf_path, "line_items")
         if line_items_image:
-            st.image(line_items_image, caption="Line Items Region", use_column_width=True)
+            st.image(line_items_image, caption="Line Items Region", use_container_width=True)
 
         # Line items fields
         st.write("### Line Items")
         for idx, item in enumerate(data.get("line_items", [])):
             st.write(f"#### Line Item {idx + 1}")
-            item["date_of_service"] = st.text_input(f"DOS (Item {idx + 1})", value=item.get("date_of_service", ""))
-            item["plos"] = st.text_input(f"PLOS (Item {idx + 1})", value=item.get("plos", ""))
-            item["cpt"] = st.text_input(f"CPT Code (Item {idx + 1})", value=item.get("cpt", ""))
-            item["modifier"] = st.text_input(f"modifier (Item {idx + 1})", value=item.get("modifier", ""))
-            item["cleaned_charge"] = st.text_input(f"Charge (Item {idx + 1})", value=item.get("cleaned_charge", ""))
-            item["units"] = st.text_input(f"units (Item {idx + 1})", value=item.get("units", ""))
-            
+            cols = st.columns(6)
+            item["date_of_service"] = cols[0].text_input(f"DOS (Item {idx + 1})", value=item.get("date_of_service", ""))
+            item["plos"] = cols[1].text_input(f"PLOS (Item {idx + 1})", value=item.get("plos", ""))
+            item["cpt"] = cols[2].text_input(f"CPT Code (Item {idx + 1})", value=item.get("cpt", ""))
+            item["modifier"] = cols[3].text_input(f"Modifier (Item {idx + 1})", value=item.get("modifier", ""))
+            item["cleaned_charge"] = cols[4].text_input(f"Charge (Item {idx + 1})", value=item.get("cleaned_charge", ""))
+            item["units"] = cols[5].text_input(f"Units (Item {idx + 1})", value=item.get("units", ""))
 
         # Show cropped footer image
         footer_image = get_pdf_region(pdf_path, "footer")
         if footer_image:
-            st.image(footer_image, caption="Footer Region", use_column_width=True)
+            st.image(footer_image, caption="Footer Region", use_container_width=True)
 
         # Footer fields
         st.write("### Footer Information")
-        data["cleaned_total_charge"] = st.text_input("Total Charge", value=data.get("cleaned_total_charge", ""))
-        data["patient_acct_no"] = st.text_input("Patient Account No", value=data.get("patient_acct_no", ""))
-        data["tin"] = st.text_input("TIN", value=data.get("tin", ""))
+        cols = st.columns(3)
+        data["cleaned_total_charge"] = cols[0].text_input("Total Charge", value=data.get("cleaned_total_charge", ""))
+        data["patient_acct_no"] = cols[1].text_input("Patient Account No", value=data.get("patient_acct_no", ""))
+        data["tin"] = cols[2].text_input("TIN", value=data.get("tin", ""))
 
         # Open full PDF button
         if st.button("Open Full PDF"):
