@@ -59,6 +59,8 @@ if files:
     # PDF display
     pdf_name = os.path.splitext(current_file)[0] + ".pdf"
     pdf_path = os.path.join(PDF_FOLDER, pdf_name)
+    # Debugging: Print PDF path to verify
+    print(f"Processing PDF path: {pdf_path}")
     if os.path.exists(pdf_path):
         st.write("### PDF Preview")
         # Show cropped header image
