@@ -3,12 +3,15 @@ import streamlit as st
 from app.utils import list_files, load_file, save_file
 from app.pdf_utils import get_pdf_region
 
-# Configurations
+# Base directory setup
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FAILS_FOLDER = os.path.join(BASE_DIR, "..", "data", "fails")
-OUTPUT_FOLDER = os.path.join(BASE_DIR, "..", "data", "output")
-ORIGINALS_FOLDER = os.path.join(BASE_DIR, "..", "data", "originals")
-PDF_FOLDER = os.path.join(BASE_DIR, "..", "data", "pdfs")
+DATA_DIR = os.path.join(BASE_DIR, "data")
+
+# Configurations for folders
+FAILS_FOLDER = os.path.join(DATA_DIR, "fails")
+OUTPUT_FOLDER = os.path.join(DATA_DIR, "output")
+ORIGINALS_FOLDER = os.path.join(DATA_DIR, "originals")
+PDF_FOLDER = os.path.join(DATA_DIR, "pdfs")
 
 # Initialize session state
 if "current_file_index" not in st.session_state:
