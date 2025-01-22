@@ -44,12 +44,12 @@ if files:
         if st.button("Previous", disabled=st.session_state.current_file_index == 0):
             st.session_state.current_file_index -= 1
             st.session_state.current_data = None  # Reset data for the new file
-            st.experimental_rerun()
+            st.rerun()
     with col2:
         if st.button("Next", disabled=st.session_state.current_file_index == len(files) - 1):
             st.session_state.current_file_index += 1
             st.session_state.current_data = None  # Reset data for the new file
-            st.experimental_rerun()
+            st.rerun()
 
     # Display file name
     st.write(f"### Currently Reviewing: **{current_file}**")
@@ -60,7 +60,6 @@ if files:
     # PDF display
     pdf_name = os.path.splitext(current_file)[0] + ".pdf"
     pdf_path = os.path.join(PDF_FOLDER, pdf_name)
-    # Debugging: Print PDF path to verify
     print(f"Processing PDF path: {pdf_path}")
     if os.path.exists(pdf_path):
         st.write("### PDF Preview")
@@ -95,8 +94,6 @@ if files:
 
         # Line items fields
         st.write("### Line Items")
-
-        # Add and Remove Line Items Buttons
         if "line_items" not in data:
             data["line_items"] = []
 
@@ -122,7 +119,7 @@ if files:
 
             if st.button(f"Remove Line Item {idx + 1}"):
                 data["line_items"].pop(idx)
-                st.experimental_rerun()
+                st.rerun()
 
         # Show cropped footer image
         footer_image = get_pdf_region(pdf_path, "footer")
@@ -136,7 +133,6 @@ if files:
         data["patient_acct_no"] = cols[1].text_input("Patient Account No", value=data.get("patient_acct_no", ""))
         data["tin"] = cols[2].text_input("TIN", value=data.get("tin", ""))
 
-        # Open full PDF button
         if st.button("Open Full PDF"):
             st.write(f"[Open {pdf_name}](./data/pdfs/{pdf_name})", unsafe_allow_html=True)
     else:
@@ -144,19 +140,19 @@ if files:
 
     # Reset button
     if st.button("Reset Changes"):
-        st.session_state.current_data = load_file(file_path)  # Reload original data
-        st.experimental_rerun()
+        st.session_state.current_data = load_file(file_path)
+        st.rerun()
 
     # Save button
     if st.button("Save Changes"):
         save_file(data, current_file, FAILS_FOLDER, OUTPUT_FOLDER, ORIGINALS_FOLDER)
         st.success(f"Changes saved for {current_file}")
-        st.session_state.current_file_index += 1  # Move to the next file
+        st.session_state.current_file_index += 1
         if st.session_state.current_file_index < len(files):
-            st.session_state.current_data = None  # Reset data for the new file
-            st.experimental_rerun()
+            st.session_state.current_data = None
+            st.rerun()
         else:
             st.write("### No more files to review!")
-            st.session_state.current_file_index = 0  # Reset to the first file
+            st.session_state.current_file_index = 0
 else:
     st.write("No files to review.")
