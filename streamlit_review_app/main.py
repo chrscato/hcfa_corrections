@@ -60,33 +60,39 @@ if files:
     # PDF display
     pdf_name = os.path.splitext(current_file)[0] + ".pdf"
     pdf_path = os.path.join(PDF_FOLDER, pdf_name)
-    # Debugging: Print PDF path to verify
-    print(f"Processing PDF path: {pdf_path}")
     if os.path.exists(pdf_path):
         st.write("### PDF Preview")
         # Show cropped header image
         header_image = get_pdf_region(pdf_path, "header")
         if header_image:
-            st.image(header_image, caption="Header Region", use_column_width=True)
+            st.image(header_image, caption="Header Region", use_container_width=True)
 
         # Header fields
         st.write("### Header Information")
         data["patient_name"] = st.text_input("Patient Name", value=data.get("patient_name", ""))
-        
+
         # Default value for the calendar
         default_date = datetime(2025, 1, 1)
-        
-        # Use st.date_input for DOS fields with default values
+
+        # Use st.date_input for DOS fields with proper validation and default handling
+        cleaned_dos1_value = data.get("cleaned_dos1", None)
+        cleaned_dos1_date = (
+            datetime.strptime(cleaned_dos1_value, "%Y-%m-%d") if cleaned_dos1_value else default_date
+        )
         cleaned_dos1 = st.date_input(
             "Date of Service 1",
-            value=datetime.strptime(data.get("cleaned_dos1", default_date.strftime("%Y-%m-%d")), "%Y-%m-%d"),
+            value=cleaned_dos1_date,
             key="cleaned_dos1"
         )
         data["cleaned_dos1"] = cleaned_dos1.strftime("%Y-%m-%d")
-        
+
+        cleaned_dos2_value = data.get("cleaned_dos2", None)
+        cleaned_dos2_date = (
+            datetime.strptime(cleaned_dos2_value, "%Y-%m-%d") if cleaned_dos2_value else default_date
+        )
         cleaned_dos2 = st.date_input(
             "Date of Service 2",
-            value=datetime.strptime(data.get("cleaned_dos2", default_date.strftime("%Y-%m-%d")), "%Y-%m-%d"),
+            value=cleaned_dos2_date,
             key="cleaned_dos2"
         )
         data["cleaned_dos2"] = cleaned_dos2.strftime("%Y-%m-%d")
@@ -94,7 +100,7 @@ if files:
         # Show cropped line items image
         line_items_image = get_pdf_region(pdf_path, "line_items")
         if line_items_image:
-            st.image(line_items_image, caption="Line Items Region", use_column_width=True)
+            st.image(line_items_image, caption="Line Items Region", use_container_width=True)
 
         # Line items fields
         st.write("### Line Items")
@@ -107,7 +113,7 @@ if files:
         # Show cropped footer image
         footer_image = get_pdf_region(pdf_path, "footer")
         if footer_image:
-            st.image(footer_image, caption="Footer Region", use_column_width=True)
+            st.image(footer_image, caption="Footer Region", use_container_width=True)
 
         # Footer fields
         st.write("### Footer Information")
