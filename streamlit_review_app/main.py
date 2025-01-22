@@ -6,8 +6,8 @@ import os
 # Configurations
 FAILS_FOLDER = "streamlit_review_app/data/fails"
 OUTPUT_FOLDER = "streamlit_review_app/data/output"
-PDF_FOLDER = "streamlit_review_app/datapdfs"
-ORIGINALS_FOLDER = "streamlit_review_app/dataoriginals"
+PDF_FOLDER = "streamlit_review_app/data/pdfs"
+ORIGINALS_FOLDER = "streamlit_review_app/data/originals"
 
 # Streamlit App
 st.title("JSON Review Interface")
